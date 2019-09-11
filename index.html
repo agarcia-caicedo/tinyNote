@@ -6,6 +6,29 @@
     </head>
 
     <body>
-        <h1>Hello World!</h1>
+        <script src="https://unpkg.com/filer/dist/filer.min.js"></script>
+        <script>
+            const fs = new Filer.FileSystem();
+                window.addEventListener('DOMContentLoaded', (event) => {
+                    fs.readFile('/note', 'utf8', function (err, data) {
+                        if (err != null)
+                        {
+                            document.querySelector("#note").innerHTML = "Welcome to my notepad!";
+                        }
+                        else if (data != null)
+                        {
+                            document.querySelector("#note").innerHTML = data;
+                        }
+                    });
+                });
+            var intervalID = window.setInterval(save, 2000, ':^)');
+            function save(a)
+            {
+                fs.writeFile('/note', document.querySelector('#note').innerHTML);
+                console.log(a);
+            }
+
+        </script>
+        <div id="note" contenteditable></div>
     </body>
 </html>
