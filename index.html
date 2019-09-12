@@ -7,38 +7,37 @@
     </head>
 
     <body>
-        <script src="https://unpkg.com/filer/dist/filer.min.js"></script>
-        <script>
-            const fs = new Filer.FileSystem();
-                window.addEventListener('DOMContentLoaded', (event) => {
-                    fs.readFile('/note', 'utf8', function (err, data) {
-                        if (err)
-                        {
-                            document.querySelector("#note").innerHTML = "Welcome to my notepad! Start Typing...";
-                        }
-                        else if (data)
-                        {
-                            document.querySelector("#note").innerHTML = data;
-                        }
-                    });
-                });
-            var intervalID = window.setInterval(save, 2000);
-            function save(a)
-            {
-                fs.writeFile('/note', document.querySelector('#note').innerHTML);
-                console.log(a);
-                
-            }
-
-        </script>
-        <h1>TinyNote</h1>
-        <button type="button">light</button>
-        <br>
-        <br>
+        <div class="switch">Light Mode:
+            <span class="inner-switch">OFF</span>
+        </div>
+        <h1 id="tinyNote">TinyNote</h1>
+        <div id="myNicPanel"></div>
         <div id="container">
             <div id="note" contenteditable style="min-height:15px"></div>
         </div>
-        
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://unpkg.com/filer/dist/filer.min.js"></script>
+        <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+        <script src= "script.js"></script>
+        <script>
+            const fs = new Filer.FileSystem();
+            window.addEventListener('DOMContentLoaded', (event) => {
+                fs.readFile('/note', 'utf8', function (err, data) {
+                    if (err) {
+                        document.querySelector("#note").innerHTML = "Welcome to my notepad! Start Typing...";
+                    }
+                    else if (data) {
+                        document.querySelector("#note").innerHTML = data;
+                    }
+                });
+            });
+            var intervalID = window.setInterval(save, 2000);
+            function save(a) {
+                fs.writeFile('/note', document.querySelector('#note').innerHTML);
+                console.log(a);
+
+            }
+
+        </script>
     </body>
 </html>

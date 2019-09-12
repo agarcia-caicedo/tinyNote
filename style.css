@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Fascinate');
 body {
     background-color: rgb(29, 29, 29);
-    color: rgb(206, 204, 204);
 }
 
-h1 {
+h1#tinyNote {
     font-family: 'Fascinate'; 
     text-align: center;
     font-size: 45px; 
+    text-decoration: underline;
+    color:  rgb(221, 221, 221);
 }
 
 div#container {
     background-color: rgb(66, 66, 66);
-    color:  rgb(206, 204, 204);
     border-radius: 5px;
     overflow: auto;
     width: 70%;
@@ -22,4 +22,53 @@ div#container {
 
 div#note {
     padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color:  rgb(235, 235, 235);
 }
+
+div#myNicPanel{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.switch {
+    align-self: flex-end;
+    margin: 0.9375rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:  rgb(221, 221, 221);
+}
+.inner-switch {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;
+}
+
+.light,
+body.light {
+    background-color: rgb(218, 218, 218);
+    color: rgb(26, 26, 26);
+}
+
+body.light h1#tinyNote{
+    color: rgb(26, 26, 26);
+}
+
+body.light .switch{
+    color: rgb(26, 26, 26);
+}
+
+body.light div#container{
+    background-color: rgb(255, 255, 255);
+}
+
+body.light div#note{
+    color:  rgb(26, 26, 26);
+}
+
