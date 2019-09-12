@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>TinyNote</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
     <body>
@@ -11,24 +12,33 @@
             const fs = new Filer.FileSystem();
                 window.addEventListener('DOMContentLoaded', (event) => {
                     fs.readFile('/note', 'utf8', function (err, data) {
-                        if (err != null)
+                        if (err)
                         {
-                            document.querySelector("#note").innerHTML = "Welcome to my notepad!";
+                            document.querySelector("#note").innerHTML = "Welcome to my notepad! Start Typing...";
                         }
-                        else if (data != null)
+                        else if (data)
                         {
                             document.querySelector("#note").innerHTML = data;
                         }
                     });
                 });
-            var intervalID = window.setInterval(save, 2000, ':^)');
+            var intervalID = window.setInterval(save, 2000);
             function save(a)
             {
                 fs.writeFile('/note', document.querySelector('#note').innerHTML);
                 console.log(a);
+                
             }
 
         </script>
-        <div id="note" contenteditable></div>
+        <h1>TinyNote</h1>
+        <button type="button">light</button>
+        <br>
+        <br>
+        <div id="container">
+            <div id="note" contenteditable style="min-height:15px"></div>
+        </div>
+        
+        
     </body>
 </html>

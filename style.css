@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Fascinate');
+body {
+    background-color: rgb(29, 29, 29);
+    color: rgb(206, 204, 204);
+}
+
+h1 {
+    font-family: 'Fascinate'; 
+    text-align: center;
+    font-size: 45px; 
+}
+
+div#container {
+    background-color: rgb(66, 66, 66);
+    color:  rgb(206, 204, 204);
+    border-radius: 5px;
+    overflow: auto;
+    width: 70%;
+    margin: 0 auto;
+    height: 500px;
+}
+
+div#note {
+    padding: 20px;
+}
