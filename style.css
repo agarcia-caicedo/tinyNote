@@ -142,6 +142,12 @@ body.light .switch{
     color: rgb(26, 26, 26);
 }
 
+body.light .inner-switch
+{
+    border: 1px solid rgb(26, 26, 26);
+}
+
+
 body.light div#container{
     background-color: rgb(255, 255, 255);
 }
@@ -153,7 +159,6 @@ body.light div#note{
 body.light .inner-switch:hover
 {
     background-color: rgb(66, 66, 66);
-    border: 1px solid rgb(26, 26, 26);
     color: rgb(218, 218, 218);
 }
 
