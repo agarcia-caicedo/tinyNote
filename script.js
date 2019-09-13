@@ -34,18 +34,6 @@ function saveAlert(){
 }
 
 function download(){
-    var blob = new Blob([document.querySelector('#note').innerHTML], {type: "text/xml;charset=utf-8"});
+    var blob = new Blob([document.querySelector('#con #note').innerHTML], {type: "text/xml;charset=utf-8"});
     saveAs(blob, "tiny.xml");
 }
-
-var quill = new Quill('#note', {
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline'],
-        ['code-block']
-      ]
-    },
-    placeholder: 'Compose an epic...',
-    theme: 'snow'
-  });
