@@ -8,17 +8,9 @@ $( ".inner-switch" ).on("click", function() {
     }
 });
 
-bkLib.onDomLoaded(function() {
-    var myNicEditor = new nicEditor({buttonList : 
-        ['bold','italic','underline','left','center','right','justify','ol','ul',
-        'fontFormat','fontFamily','forecolor','subscript','superscript','strikethrough',
-        'removeformat','indent','outdent','hr']});
-    myNicEditor.setPanel('myNicPanel');
-    myNicEditor.addInstance('note');
-});
-
 const fs = new Filer.FileSystem();
 window.addEventListener('DOMContentLoaded', (event) => {
+
     fs.readFile('/note', 'utf8', function (err, data) {
         if (err) {
             document.querySelector("#note").innerHTML = "Welcome to my notepad! Start Typing...";
@@ -27,6 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             document.querySelector("#note").innerHTML = data;
         }
     });
+
 });
 var intervalID = window.setInterval(save, 20000);
 function save(a) {
@@ -44,3 +37,15 @@ function download(){
     var blob = new Blob([document.querySelector('#note').innerHTML], {type: "text/xml;charset=utf-8"});
     saveAs(blob, "tiny.xml");
 }
+
+var quill = new Quill('#note', {
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, false] }],
+        ['bold', 'italic', 'underline'],
+        ['code-block']
+      ]
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
+  });
