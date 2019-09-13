@@ -36,7 +36,7 @@ function save(a) {
 }
 
 function saveAlert(){
-    save();
+    save("saving...");
     alert("Saved!");
 }
 
