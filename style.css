@@ -4,6 +4,7 @@ body {
     background-color: rgb(29, 29, 29);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+  
 
 h1#tinyNote {
     font-family: 'Fascinate'; 
@@ -47,7 +48,7 @@ li#title {
     margin: 0 auto;
 }
 
-div#container {
+div#con {
     background-color: rgb(66, 66, 66);
     border-radius: 5px;
     overflow: auto;
@@ -62,10 +63,6 @@ div#note {
     color:  rgb(235, 235, 235);
 }
 
-div#myNicPanel{
-    width: 70%;
-    margin: 0 auto;
-}
 
 .inner-switch:hover
 {
@@ -148,7 +145,7 @@ body.light .inner-switch
 }
 
 
-body.light div#container{
+body.light div#con{
     background-color: rgb(255, 255, 255);
 }
 
