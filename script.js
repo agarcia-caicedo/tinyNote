@@ -1,12 +1,25 @@
+var toolbarOptions = [
+
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+  
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  
+    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+    [{ 'direction': 'rtl' }],                         // text direction
+  
+      
+    [{ 'align': [] }],
+  
+    ['clean']                                         // remove formatting button
+  ];
+
 var quill = new Quill('#note', {
     modules: {
-        toolbar: [
-        [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline'],
-        ['image', 'code-block']
-        ]
-    },
-    placeholder: 'Compose an epic...',
+        toolbar: toolbarOptions
+      },
+    placeholder: 'Start typing...',
     theme: 'snow'  // or 'bubble'
 });
 
@@ -32,16 +45,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    var intervalID = window.setInterval(save, 20000);
-
+    
 });
 
 function save() {
-    fs.writeFile('/note', document.querySelector('#note').innerHTML);
+    fs.writeFile('/note', JSON.stringify(quill.getContents()));
 }
 
 function saveAlert(){
-    save("saving...");
+    save();
     alert("Saved!");
 }
 

@@ -11,7 +11,7 @@
         <ul>
             <li>
                 <div class="switch">
-                    <span class="save" onclick="saveAlert()">Save</span>
+                    <span class="save" onclick="saveAlert()">?</span>
                 </div>
             </li>
             <li>
@@ -40,23 +40,10 @@
             
 
         <div id="con">
-            <div id="note" contenteditable style="height: 100%; outline: none;"></div>
+            <div id="note"D style="height: 100%; outline: none;"></div>
         </div>
 
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>       
-        <script>
-            var quill = new Quill('#note', {
-            modules: {
-                toolbar: [
-                [{ header: [1, 2, false] }],
-                ['bold', 'italic', 'underline'],
-                ['image', 'code-block']
-                ]
-            },
-            placeholder: 'Compose an epic...',
-            theme: 'snow'  // or 'bubble'
-            });
-        </script>
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         
