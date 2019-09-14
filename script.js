@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (err) {
             quill.setText('Welcome to my note! Start typing...');
         }
-        else if (data) {
+        if (data) {
             quill.setContents(JSON.parse(data));
         }
     });
