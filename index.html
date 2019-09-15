@@ -19,6 +19,11 @@
                     <span class="download" onclick="download().innerHTML">Download</span>
                 </div>
             </li>
+            <li>
+                <div class="switch">
+                    <span class="download" onclick="downloadPDF()">Download PDF</span>
+                </div>
+            </li>
             <li style="float:right">
                 <div class="switch">
                     <span class="inner-switch">Light Mode</span>
@@ -45,7 +50,7 @@
 
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/filer/dist/filer.min.js"></script>
         <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>       
