@@ -65,7 +65,7 @@ function download(){
 function downloadPDF(){
     var doc = new jsPDF();
     var note = `
-               Agarcia Caicedo's note: ${document.querySelector('#con #note').innerText} \n
+                ${document.querySelector('#con #note').innerText} \n
               ~
               `;
     doc.text(note, 10, 10);
