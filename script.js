@@ -48,13 +48,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
 });
 
-function save() {
-    fs.writeFile('/note', JSON.stringify(quill.getContents()));
-}
-
-function saveAlert(){
-    save();
-    alert("Saved!");
+function saveFile() {
+    fs.writeFile('/note', document.querySelector('#note').innerHTML, function(err) {
+        if(err) {
+            console.error('Error saving', err);
+            return alert('Unable to Save!');
+        }
+        return alert('Saved!');
+    });
 }
 
 function download(){
