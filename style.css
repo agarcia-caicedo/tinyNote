@@ -4,7 +4,6 @@ body {
     background-color: rgb(29, 29, 29);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-  
 
 h1#tinyNote {
     font-family: 'Fascinate'; 
@@ -57,12 +56,28 @@ div#con {
     height: 80vh;
 }
 
+/* For improved styling and visibility */
+
+body:not(.light) .ql-toolbar{
+    background-color: #E74040;
+}
+
+body:not(.light) .ql-toolbar{
+    border: 0px;
+    /* border: 1px solid #E74040; */
+}
+
+body:not(.light) .ql-container{
+    border: 0px;
+    /* border: 1px solid rgb(66, 66, 66); */
+}
+
+
 div#note {
     padding: 20px;
     font-size: 20px;
     color:  rgb(235, 235, 235);
 }
-
 
 .inner-switch:hover
 {
