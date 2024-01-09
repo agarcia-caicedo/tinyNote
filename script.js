@@ -38,7 +38,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     fs.readFile('/note', 'utf8', function (err, data) {
         if (err) {
-            quill.setText('Welcome to my note! Start typing...');
+            console.log(err);
+            //quill.setText('Welcome to my note! Start typing...');
         }
         if (data) {
             quill.setContents(JSON.parse(data));
