@@ -10,9 +10,10 @@ h1#tinyNote {
     font-size: 55px; 
     text-decoration: underline;
     color:  rgb(221, 221, 221);
-    text-align: center;
-   
+    text-align: right;
+    margin: 0 auto;
 }
+
 h2#author{
     font-family: 'Condiment';
     
@@ -38,13 +39,13 @@ ul {
     padding: 0;
   }
 
-li {
+ul#tools > li {
     float: left; 
     padding: 0px, 25px; 
 }
 
-li#title {
-    margin: 0 auto;
+table.title {
+    width: 50%;
 }
 
 div#con {
